@@ -13,7 +13,7 @@ phases:
     commands:
       - echo "Build started on $(date)"
       - mkdir -p output
-      - cp -r index.html appspec.yml deploy.sh remove.sh output/
+      - cp -r index.html appspec.yml deploy.sh output/
 
   post_build:
     commands:
