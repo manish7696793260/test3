@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies..."
+
+  pre_build:
+    commands:
+      - echo "Pre-build started..."
+
+  build:
+    commands:
+      - echo "Build started on $(date)"
+      - mkdir -p output
+      - cp -r index.html appspec.yml scripts output/
+
+  post_build:
+    commands:
+      - echo "Build completed successfully."
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: output
