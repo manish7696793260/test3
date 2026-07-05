@@ -1,25 +1,23 @@
 version: 0.2
 
 phases:
+
   install:
     commands:
-      - echo "Installing dependencies..."
+      - echo "Install phase started"
 
   pre_build:
     commands:
-      - echo "Pre-build started..."
+      - echo "Pre-build phase started"
 
   build:
     commands:
-      - echo "Build started on $(date)"
-      - mkdir -p output
-      - cp -r index.html appspec.yml output/
+      - echo "Build phase started"
 
   post_build:
     commands:
-      - echo "Build completed successfully."
+      - echo "Packaging deployment artifact"
 
 artifacts:
   files:
     - '**/*'
-  base-directory: output
