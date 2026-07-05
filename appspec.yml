@@ -1,13 +1,17 @@
 version: 0.0
 os: linux
 
-file_exists_behavior: OVERWRITE
-
 files:
   - source: /
     destination: /var/www/html
+    overwrite: true
 
 hooks:
+
+  BeforeInstall:
+    - location: remove.sh
+      timeout: 300
+      runas: root
 
   AfterInstall:
     - location: deploy.sh
